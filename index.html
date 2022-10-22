@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS e Script Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CSS e Scripts manuais -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/questions.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    
+    <title>Quiz Bootstrap</title>
+</head>
+<body style="background-image: url(assets/images/bg-2.jpg); background-position: left center ; background-size: 100%; background-repeat: repeat-x; background-color: #dadada;">
+    <!-- Barra de progresso -->
+    <div class="progress">
+        <div class="progress-bar bg-info progress-bar-striped progress-bar-animated"></div>
+    </div>
+
+    <div class="container">
+        <!-- Botão de iniciar -->
+        <div class="centered">
+            <button class="btn btn-primary btn-lg position-absolute top-50 start-50 translate-middle shadow-lg" data-bs-toggle="modal" data-bs-target="#modalQuestions" id="startButton" onclick="showQuestion()">Começar o QUIZ!</button>
+        </div>
+
+        <!-- Modal -->  
+        <div class="modal fade" id="modalQuestions" data-bs-backdrop="static">
+
+            <div class="modal-dialog modal-dialog-centered">
+
+                <div class="modal-content">
+                    
+                    <div class="modal-header">
+                        <h4 class="modal-title question"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="list-group options"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" data-bs-dismiss="modal" onclick="giveUp()">Desistir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Area de Resultado -->
+        <div class="score-area card w-25 text-center position-absolute top-50 start-50 translate-middle" style="display: none;">
+
+            <img src="assets/images/prizeimg.png" height="auto" width="175px" class="py-3" alt="Troféu">
+
+            <div class="card-body">
+
+                <h5 class="scoreText1 card-title">FIM</h5>
+                <h6 class="scorePct card-text">Acertou X%</h6>
+                <p class="scoreText2 card-text mb-3">Você respondeu X questões e acertou Y</p>
+
+                <button class="btn btn-success shadow-md" data-bs-toggle="modal" data-bs-target="#modalQuestions" onclick="resetEvent()">Fazer o quiz novamente</button>
+
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="fixed-bottom text-center mb-3 container">
+
+            Criado por <a class="link-dark" target=”_blank” href="https://www.linkedin.com/in/mayconhenrique/">Maycon H. Marques</a> com auxilio da <a class="link-dark" target=”_blank” href="https://b7web.com.br/fullstack/">B7 Web</a>
+
+        </footer>
+    </div>
+</body>
+</html>
