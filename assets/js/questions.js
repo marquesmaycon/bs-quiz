@@ -4,7 +4,7 @@ let questions = [
         options: [
             'table raw',
             'table rem',
-            'tablw row',
+            'table row',
         ],
         answer: 2
     },
